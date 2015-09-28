@@ -1,0 +1,5 @@
+*.class
+target/maven-archiver/pom.properties
+*.jar
+target/surefire-reports/com.lastminute.api.ProductTest.txt
+target/surefire-reports/TEST-com.lastminute.api.ProductTest.xml

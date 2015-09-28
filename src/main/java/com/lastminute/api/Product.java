@@ -1,9 +1,12 @@
 package com.lastminute.api;
 
 public class Product {
+	private static final String[] EXEMPTION_KEYWORDS = {"book", "food", "medical", "pill"};
+	
 	private String name;
 	private boolean exemption;
 	private boolean imported;
+	
 	
 	public static Product get(String name, boolean basicTaxExempted, boolean imported){
 		return new Product(name, basicTaxExempted, imported);
@@ -14,9 +17,8 @@ public class Product {
 	}
 	
 	static boolean isExempted(String name){
-		final String[] keywords = {"book", "food", "medical", "pill"};
-		for(int i=0; name!= null && i<keywords.length; i++){
-			if(name.indexOf(keywords[i])>=0){
+		for(int i=0; name!= null && i< EXEMPTION_KEYWORDS.length; i++){
+			if(name.indexOf(EXEMPTION_KEYWORDS[i])>=0){
 				return true;
 			}
 		}

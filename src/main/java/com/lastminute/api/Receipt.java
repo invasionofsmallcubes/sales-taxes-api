@@ -17,8 +17,8 @@ public class Receipt {
 	private synchronized void updateTotals(ReceiptItem item) {
 		double curCost = item.getPrice() * item.getQuantity();
 		
-		salesTaxes += item.getTax();
-		totalCost += TaxCalculator.round(curCost + item.getTax());
+		salesTaxes = TaxCalculator.round(salesTaxes + item.getTax());
+		totalCost = TaxCalculator.round(totalCost + curCost + item.getTax());
 	}
 	
 	public List<ReceiptItem> getItems(){

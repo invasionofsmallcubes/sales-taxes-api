@@ -30,6 +30,20 @@ public class ReceiptTest {
 		assertEquals(65.15, r.getTotalCost(), EPSILON);
 	}
 	
+	@Test
+	public void checkOrder3() {
+		Receipt r = getForOrder3();
+		
+		assertEquals(32.19, r.getItems().get(0).getTotalCost(), EPSILON);
+		assertEquals(20.89, r.getItems().get(1).getTotalCost(), EPSILON);
+		assertEquals(9.75, r.getItems().get(2).getTotalCost(), EPSILON);
+		assertEquals(11.85, r.getItems().get(3).getTotalCost(), EPSILON);
+		
+		
+		assertEquals(6.70, r.getSalesTaxes(), EPSILON);
+		assertEquals(74.68, r.getTotalCost(), EPSILON);
+	}
+	
 	private Receipt getForOrder1(){
 		Receipt r = new Receipt();
 		r.addItem(new ReceiptItem(1, Product.get("book"), 12.49));
@@ -42,6 +56,15 @@ public class ReceiptTest {
 		Receipt r = new Receipt();
 		r.addItem(new ReceiptItem(1, Product.get("imported box of chocolates"), 10.00));
 		r.addItem(new ReceiptItem(1, Product.get("imported bottle of perfume"), 47.50));
+		return r;
+	} 
+	
+	private Receipt getForOrder3(){
+		Receipt r = new Receipt();
+		r.addItem(new ReceiptItem(1, Product.get("imported bottle of perfume"), 27.99));
+		r.addItem(new ReceiptItem(1, Product.get("bottle of perfume"), 18.99));
+		r.addItem(new ReceiptItem(1, Product.get("packet of headache pills"), 9.75));
+		r.addItem(new ReceiptItem(1, Product.get("box of imported chocolates"), 11.25));
 		return r;
 	} 
 

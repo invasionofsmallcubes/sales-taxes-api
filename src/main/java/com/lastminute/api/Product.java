@@ -1,19 +1,20 @@
 package com.lastminute.api;
 
 public class Product {
-	private static final String[] EXEMPTION_KEYWORDS = {"book", "food", "medical", "pill"};
+	private static final String[] EXEMPTION_KEYWORDS = {"book", "food", "medical", "pill", "chocolate"};
 	private static final String[] IMPORTED_KEYWORDS = {"imported"};
 	
 	private String name;
 	private boolean exemption;
 	private boolean imported;
 	
+	//public API, the caller will know if it is exempted or imported
 	public static Product get(String name, boolean basicTaxExempted, boolean imported){
 		return new Product(name, basicTaxExempted, imported);
 	}
 	
 	//package visibility, just for test purposes
-	static Product getInferring(String name){
+	static Product get(String name){
 		return new Product(name, containsKeyword(name, EXEMPTION_KEYWORDS), containsKeyword(name, IMPORTED_KEYWORDS));
 	}
 	

@@ -2,23 +2,24 @@ package com.lastminute.api;
 
 public class Product {
 	private static final String[] EXEMPTION_KEYWORDS = {"book", "food", "medical", "pill"};
+	private static final String[] IMPORTED_KEYWORDS = {"imported"};
 	
 	private String name;
 	private boolean exemption;
 	private boolean imported;
 	
-	
 	public static Product get(String name, boolean basicTaxExempted, boolean imported){
 		return new Product(name, basicTaxExempted, imported);
 	}
 	
-	public static Product getInferringExemption(String name, boolean imported){
-		return new Product(name, isExempted(name), imported);
+	//package visibility, just for test purposes
+	static Product getInferring(String name){
+		return new Product(name, containsKeyword(name, EXEMPTION_KEYWORDS), containsKeyword(name, IMPORTED_KEYWORDS));
 	}
 	
-	static boolean isExempted(String name){
-		for(int i=0; name!= null && i< EXEMPTION_KEYWORDS.length; i++){
-			if(name.indexOf(EXEMPTION_KEYWORDS[i])>=0){
+	private static boolean containsKeyword(String name, String[] keywords){
+		for(int i=0; name!= null && i< keywords.length; i++){
+			if(name.toLowerCase().indexOf(keywords[i])>=0){
 				return true;
 			}
 		}

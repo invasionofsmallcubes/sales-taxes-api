@@ -8,15 +8,15 @@ public class ProductTest {
 
 	@Test
 	public void checkExemption() {
-		assertEquals(true, Product.getInferringExemption("book of the books", true).isExempted());
-		assertEquals(false, Product.getInferringExemption("bottle of perfume", true).isExempted());
-		assertEquals(true, Product.getInferringExemption("packet of headache pills", true).isExempted());
+		assertEquals(true, Product.getInferring("book of the books").isExempted());
+		assertEquals(false, Product.getInferring("bottle of perfume").isExempted());
+		assertEquals(true, Product.getInferring("packet of headache pills").isExempted());
 	}
 	
 	@Test
 	public void checkImportation() {
-		assertEquals(true, Product.getInferringExemption("yes", true).isImported());
-		assertEquals(false, Product.getInferringExemption("no", false).isImported());
+		assertEquals(true, Product.getInferring("imported").isImported());
+		assertEquals(false, Product.getInferring("no").isImported());
 	}
 
 }

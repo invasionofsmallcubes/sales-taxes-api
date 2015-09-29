@@ -3,3 +3,7 @@ target/maven-archiver/pom.properties
 *.jar
 target/surefire-reports/com.lastminute.api.ProductTest.txt
 target/surefire-reports/TEST-com.lastminute.api.ProductTest.xml
+target/surefire-reports/com.lastminute.api.ReceiptPrinterTest.txt
+target/surefire-reports/TEST-com.lastminute.api.ReceiptPrinterTest.xml
+target/surefire-reports/TEST-com.lastminute.api.ReceiptTest.xml
+target/surefire-reports/com.lastminute.api.ReceiptTest.txt

@@ -16,6 +16,7 @@ public class ReceiptPrinter {
 	public String format(){
 		String tmp = "";
 		final char CR = '\n';
+		
 		List<ReceiptItem> items = receipt.getItems();
 		for (ReceiptItem it : items) {
 			tmp+= it.getQuantity() + " "+ it.getProduct().getName() + ": " + COST_FORMAT.format(it.getTotalCost()) + CR;

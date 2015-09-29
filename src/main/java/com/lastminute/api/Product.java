@@ -5,7 +5,7 @@ public class Product {
 	private boolean exemption;
 	private boolean imported;
 	
-	public static Product get(String name, boolean exemption, boolean imported){
+	public static Product build(String name, boolean exemption, boolean imported){
 		return new Product(name, exemption, imported);
 	}
 	

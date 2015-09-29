@@ -4,8 +4,8 @@ class FakeProduct  {
 	private static final String[] EXEMPTION_KEYWORDS = {"book", "food", "medical", "pill", "chocolate"};
 	private static final String[] IMPORTED_KEYWORDS = {"imported"};
 	
-	static Product get(String name){
-		return Product.get(name, containsKeyword(name, EXEMPTION_KEYWORDS), containsKeyword(name, IMPORTED_KEYWORDS));
+	static Product build(String name){
+		return Product.build(name, containsKeyword(name, EXEMPTION_KEYWORDS), containsKeyword(name, IMPORTED_KEYWORDS));
 	}
 	
 	private static boolean containsKeyword(String name, String[] keywords){

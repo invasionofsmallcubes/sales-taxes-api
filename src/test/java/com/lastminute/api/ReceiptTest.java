@@ -46,25 +46,25 @@ public class ReceiptTest {
 	
 	private Receipt getForOrder1(){
 		Receipt r = new Receipt();
-		r.addItem(new ReceiptItem(1, Product.get("book"), 12.49));
-		r.addItem(new ReceiptItem(1, Product.get("music CD "), 14.99));
-		r.addItem(new ReceiptItem(1, Product.get("chocolate bar"), 0.85));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("book"), 12.49));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("music CD "), 14.99));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("chocolate bar"), 0.85));
 		return r;
 	} 
 	
 	private Receipt getForOrder2(){
 		Receipt r = new Receipt();
-		r.addItem(new ReceiptItem(1, Product.get("imported box of chocolates"), 10.00));
-		r.addItem(new ReceiptItem(1, Product.get("imported bottle of perfume"), 47.50));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("imported box of chocolates"), 10.00));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("imported bottle of perfume"), 47.50));
 		return r;
 	} 
 	
 	private Receipt getForOrder3(){
 		Receipt r = new Receipt();
-		r.addItem(new ReceiptItem(1, Product.get("imported bottle of perfume"), 27.99));
-		r.addItem(new ReceiptItem(1, Product.get("bottle of perfume"), 18.99));
-		r.addItem(new ReceiptItem(1, Product.get("packet of headache pills"), 9.75));
-		r.addItem(new ReceiptItem(1, Product.get("box of imported chocolates"), 11.25));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("imported bottle of perfume"), 27.99));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("bottle of perfume"), 18.99));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("packet of headache pills"), 9.75));
+		r.addItem(new ReceiptItem(1, FakeProduct.get("box of imported chocolates"), 11.25));
 		return r;
 	} 
 

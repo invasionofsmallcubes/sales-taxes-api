@@ -22,13 +22,12 @@ public class TaxCalculator {
 		
 		return tax;
 	}
-
-	static double roundOff(Double in) {
-		return round(Math.ceil(in / ROUND_FACTOR) * ROUND_FACTOR);
-	}
 	
-	static double round(Double in) {
+	public static double round(Double in) {
 		return new BigDecimal(in.toString()).setScale(MAX_DEC, BigDecimal.ROUND_HALF_UP).doubleValue();
 	}
-	
+
+	private static double roundOff(Double in) {
+		return round(Math.ceil(in / ROUND_FACTOR) * ROUND_FACTOR);
+	}
 }

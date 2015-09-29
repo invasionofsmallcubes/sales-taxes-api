@@ -9,7 +9,7 @@ public class ReceiptTest {
 	
 	@Test
 	public void checkOrder1() {
-		Receipt r = getForOrder1();
+		Receipt r = OrderUtil.getForOrder1();
 		
 		assertEquals(12.49, r.getItems().get(0).getTotalCost(), EPSILON);
 		assertEquals(16.49, r.getItems().get(1).getTotalCost(), EPSILON);
@@ -21,7 +21,7 @@ public class ReceiptTest {
 	
 	@Test
 	public void checkOrder2() {
-		Receipt r = getForOrder2();
+		Receipt r = OrderUtil.getForOrder2();
 		
 		assertEquals(10.50, r.getItems().get(0).getTotalCost(), EPSILON);
 		assertEquals(54.65, r.getItems().get(1).getTotalCost(), EPSILON);
@@ -32,7 +32,7 @@ public class ReceiptTest {
 	
 	@Test
 	public void checkOrder3() {
-		Receipt r = getForOrder3();
+		Receipt r = OrderUtil.getForOrder3();
 		
 		assertEquals(32.19, r.getItems().get(0).getTotalCost(), EPSILON);
 		assertEquals(20.89, r.getItems().get(1).getTotalCost(), EPSILON);
@@ -44,28 +44,6 @@ public class ReceiptTest {
 		assertEquals(74.68, r.getTotalCost(), EPSILON);
 	}
 	
-	private Receipt getForOrder1(){
-		Receipt r = new Receipt();
-		r.addItem(new ReceiptItem(1, FakeProduct.build("book"), 12.49));
-		r.addItem(new ReceiptItem(1, FakeProduct.build("music CD "), 14.99));
-		r.addItem(new ReceiptItem(1, FakeProduct.build("chocolate bar"), 0.85));
-		return r;
-	} 
-	
-	private Receipt getForOrder2(){
-		Receipt r = new Receipt();
-		r.addItem(new ReceiptItem(1, FakeProduct.build("imported box of chocolates"), 10.00));
-		r.addItem(new ReceiptItem(1, FakeProduct.build("imported bottle of perfume"), 47.50));
-		return r;
-	} 
-	
-	private Receipt getForOrder3(){
-		Receipt r = new Receipt();
-		r.addItem(new ReceiptItem(1, FakeProduct.build("imported bottle of perfume"), 27.99));
-		r.addItem(new ReceiptItem(1, FakeProduct.build("bottle of perfume"), 18.99));
-		r.addItem(new ReceiptItem(1, FakeProduct.build("packet of headache pills"), 9.75));
-		r.addItem(new ReceiptItem(1, FakeProduct.build("box of imported chocolates"), 11.25));
-		return r;
-	} 
+
 
 }
